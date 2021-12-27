@@ -1,6 +1,7 @@
 #!/bin/bash
 
 USER=$1
+SIZE_LIMIT=$2
 
 apt install quota -y
 
@@ -12,4 +13,4 @@ quotacheck -cum /
 
 quotaon -v /
 
-setquota -u $USER 0 10GB 0 0 /
+setquota -u $USER 0 $SIZE_LIMIT 0 0 /
